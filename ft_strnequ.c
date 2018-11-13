@@ -6,18 +6,17 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 05:15:08 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 19:16:53 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/13 23:31:58 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n - 1 && s1[i] && s1[i] == s2[i])
-		i++;
-	return ((s1[i] == s2[i]) ? 1 : 0);
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	return (0);
 }

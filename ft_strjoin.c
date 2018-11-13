@@ -6,18 +6,18 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 06:04:39 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 19:22:14 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/13 23:41:11 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	char	*join;
 
-	if (s1 != NULL && s2 != NULL)
+	if (s1 && s2)
 	{
 		join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 		if (join == NULL)
@@ -28,6 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i = -1;
 		while (s2[++i] != '\0')
 			join[ft_strlen(s1) + i] = s2[i];
+		join[ft_strlen(s1) + i] = '\0';
 		return (join);
 	}
 	return (NULL);

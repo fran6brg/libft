@@ -6,17 +6,19 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 23:58:24 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 19:13:03 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/13 22:52:07 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {
 	char	*ptr;
 
-	if ((ptr = malloc(sizeof(char) * size)) == NULL)
-		return ((void *)0);
+	if ((ptr = malloc(size)) == NULL)
+		return (NULL);
+	while (size-- > 0)
+		ptr[size] = 0;
 	return (ptr);
 }

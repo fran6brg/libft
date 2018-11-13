@@ -6,19 +6,17 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 18:43:14 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 18:43:37 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/13 22:53:06 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
 	char	*ptr;
 
-	i = -1;
 	ptr = s;
-	while (++i < n)
-		ptr[i] = 0;
+	while (n-- > 0)
+		ptr[n] = 0;
 }

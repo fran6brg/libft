@@ -6,11 +6,11 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 04:04:16 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/11 04:20:17 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/13 23:01:23 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {
@@ -23,7 +23,7 @@ void	ft_strdel(char **as)
 		i = -1;
 		while (ptr[++i] != '\0')
 			free(as[i]);
-		free(as);
-		as = NULL;
+		free(as[i]);
+		*as = NULL;
 	}
 }

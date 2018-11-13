@@ -15,7 +15,7 @@ FLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRCS = *.c
 OBJS = $(SRCS:.c=.o)
-HEADERS = header.h
+HEADERS = libft.h
 
 $(NAME):
 	$(CC) $(FLAGS) -c $(SRCS)

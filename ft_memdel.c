@@ -6,17 +6,17 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 03:47:10 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 19:13:42 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/13 22:56:57 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {
-	if (ap)
+	if (ap && *ap)
 	{
-		free(ap);
+		free(*ap);
 		*ap = NULL;
 	}
 }
