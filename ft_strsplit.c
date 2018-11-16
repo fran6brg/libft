@@ -57,7 +57,7 @@ char		**ft_strsplit(char const *s, char c)
 	str = 0;
 	while (s[++i])
 	{
-		if (s[i] != c)
+	  	if (s[i] != c && str < count_str(s, c))
 		{
 			len = str_len(&s[i], c);
 			if ((strs[str] = malloc(sizeof(char) * len + 1)) == NULL)
@@ -69,6 +69,6 @@ char		**ft_strsplit(char const *s, char c)
 			str++;
 		}
 	}
-	strs[str] = (char *)'\0';
+	strs[str] = 0;
 	return (strs);
 }

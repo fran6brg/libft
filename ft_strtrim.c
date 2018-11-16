@@ -14,16 +14,16 @@
 
 static int	is_ws(char c)
 {
-	return (c == ' ' || c == '\n' || c == '\t');
+	return (c == 32 || c == 9 || c == 10);
 }
 
-static int	is_last_ws(char const *str)
+static int	is_last_char(char const *str)
 {
 	int		i;
 
-	i = -1;
-	while (is_ws(str[++i]))
-		;
+	i = 0;
+	while (str[i] && is_ws(str[i]))
+	  	i++;
 	return ((str[i] == '\0') ? 1 : 0);
 }
 
@@ -40,15 +40,15 @@ char		*ft_strtrim(char const *s)
 	while (s[++i] && is_ws(s[i]))
 		;
 	start = i;
-	i = -1;
-	while (s[start + ++i] && !is_last_ws(&s[start + i]))
-		;
+	i = 1;
+	while (is_last_char(&s[start + i]) == 0)
+		i++;
 	len = i;
 	if ((new_s = malloc(sizeof(char) * len)) == NULL)
 		return ((char *)NULL);
 	i = -1;
 	while (s[start + ++i] && i < len)
 		new_s[i] = s[start + i];
-	new_s[++i] = '\0';
+	new_s[i] = '\0';
 	return (new_s);
 }

@@ -19,14 +19,14 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-2", 2);
 		ft_putnbr_fd(147483648, fd);
 	}
-	if (n < 0)
+	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
 		ft_putnbr_fd(n * -1, fd);
 	}
-	if (n < 10)
+	else if (n < 10)
 		ft_putchar_fd(n + 48, fd);
-	if (n >= 10)
+	else if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
 		ft_putchar_fd(n % 10 + 48, fd);
