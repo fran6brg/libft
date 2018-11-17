@@ -6,7 +6,7 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 19:25:38 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 19:33:25 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/17 06:53:18 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ char		**ft_strsplit(char const *s, char c)
 	int		str;
 	int		len;
 
-	if ((strs = malloc(sizeof(char **) * (count_str(s, c) + 1))) == NULL)
+	if (!s || (strs = malloc(sizeof(char **) * (count_str(s, c) + 1))) == NULL)
 		return ((char **)NULL);
 	i = -1;
 	str = 0;
 	while (s[++i])
 	{
-	  	if (s[i] != c && str < count_str(s, c))
+		if (s[i] != c && str < count_str(s, c))
 		{
 			len = str_len(&s[i], c);
 			if ((strs[str] = malloc(sizeof(char) * len + 1)) == NULL)

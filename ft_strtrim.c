@@ -6,7 +6,7 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 06:30:59 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 23:56:22 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/17 05:30:13 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	is_last_char(char const *str)
 
 	i = 0;
 	while (str[i] && is_ws(str[i]))
-	  	i++;
+		i++;
 	return ((str[i] == '\0') ? 1 : 0);
 }
 
@@ -44,7 +44,7 @@ char		*ft_strtrim(char const *s)
 	while (is_last_char(&s[start + i]) == 0)
 		i++;
 	len = i;
-	if ((new_s = malloc(sizeof(char) * len)) == NULL)
+	if ((new_s = malloc(sizeof(char) * len + 1)) == NULL)
 		return ((char *)NULL);
 	i = -1;
 	while (s[start + ++i] && i < len)

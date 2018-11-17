@@ -6,7 +6,7 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 03:50:10 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 20:34:52 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/17 05:18:48 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *ptr;
+	char	*ptr;
+	size_t	i;
 
-	if ((ptr = malloc(sizeof(char) * size)) == NULL)
-		return ((char *)NULL);
-	while (size > 0)
-		ptr[size--] = '\0';
+	i = 0;
+	if ((ptr = malloc(sizeof(*ptr) * size + 1)) == NULL)
+		return (NULL);
+	while (i <= size)
+		ptr[i++] = '\0';
 	return (ptr);
 }

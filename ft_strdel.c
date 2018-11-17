@@ -6,7 +6,7 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 04:04:16 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/13 23:01:23 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/17 05:36:48 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	char	*ptr;
-	int		i;
-
 	if (as)
 	{
-		ptr = *as;
-		i = -1;
-		while (ptr[++i] != '\0')
-			free(as[i]);
-		free(as[i]);
+		free(*as);
 		*as = NULL;
 	}
 }

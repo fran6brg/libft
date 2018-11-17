@@ -6,7 +6,7 @@
 /*   By: fberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 19:32:52 by fberger           #+#    #+#             */
-/*   Updated: 2018/11/10 20:05:18 by fberger          ###   ########.fr       */
+/*   Updated: 2018/11/17 03:36:03 by fberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ char	*ft_strstr(const char *m, const char *a)
 	int j;
 
 	i = -1;
-	while (m[++i] != '\0')
+	if (ft_strlen(a) == 0)
+		return ((char *)m);
+	while (m[++i])
 	{
 		j = 0;
-		while (a[j] == m[i + j])
+		while (a[j] == m[i + j] && m[i + j])
 			j++;
 		if (a[j] == '\0')
 			return (((char *)m) + i);
 	}
-	return ((char *)0);
+	return (0);
 }
