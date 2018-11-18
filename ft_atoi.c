@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static int	ft_checklim(const char *str, int size, int sign)
+static int	nb_is_over_lim(const char *str, int size, int sign)
 {
 	if (size > 19)
-		return (0);
+		return (1);
 	else
 		return(str[0] == '9' && str[1] >= '2' && str[2] >= '2' && str[3] >= '3'
 		&& str[4] >= '3' && str[5] >= '7' && str[6] >= '2' && str[7] >= '0'
@@ -33,9 +33,9 @@ static int	nb_is_over_long(const char *str, int sign)
 	while(str[i] >= 48 && str[i] <= 57)
 		i++;
 	if (i >= 19  && sign == 1)
-		return ((ft_checklim(str, i, sign) == 1) ? 1 : 1);
+		return (nb_is_over_lim(str, i, sign) ? -1 : 1);
 	if (i >= 19 && sign == -1)
-		return ((ft_checklim(str, i, sign) == 1) ? 1 : 0);
+	  	return (nb_is_over_lim(str, i, sign) ? 0 : 1);
 	return (1);
 }
 
